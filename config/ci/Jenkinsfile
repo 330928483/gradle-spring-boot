@@ -1,23 +1,10 @@
 pipeline {
   options { disableConcurrentBuilds() }
   agent any
-
   stages {
-    stage("Assemble") {
+    stage('build') {
       steps {
-        sh "./gradlew clean"
-        sh "./gradlew assemble"
-      }
-    }
-    stage("Unit Test") {
-      steps {
-        sh "./gradlew clean check"
-      }
-    }
-    stage("Build/Upload") {
-      when { branch 'dev' }
-      steps {
-        sh "./gradlew dockerPush -Dgit.commit='${GIT_COMMIT.substring(0,7)}'"
+        sh './gradlew --version'
       }
     }
   }
