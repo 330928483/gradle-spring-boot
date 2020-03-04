@@ -2,9 +2,15 @@ pipeline {
   options { disableConcurrentBuilds() }
   agent any
   stages {
-    stage('build') {
+    stage("Assemble") {
       steps {
-        echo 'BUILD SUCCESS'
+        sh "./gradlew clean"
+        sh "./gradlew assemble"
+      }
+    }
+    stage("Unit Test") {
+      steps {
+        sh "./gradlew clean check"
       }
     }
   }
