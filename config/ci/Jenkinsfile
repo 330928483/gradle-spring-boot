@@ -4,6 +4,7 @@ pipeline {
   stages {
     stage("Assemble") {
       steps {
+        sh "chmod +x gradlew"
         sh "./gradlew clean"
         sh "./gradlew assemble"
       }
