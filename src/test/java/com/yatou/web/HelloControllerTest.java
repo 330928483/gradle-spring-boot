@@ -25,6 +25,6 @@ public class HelloControllerTest {
     // when
     String hello = helloController.hello();
     // then
-    Assert.assertEquals("1234", hello);
+    Assert.assertEquals("123", hello);
   }
 }
