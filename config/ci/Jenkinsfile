@@ -14,11 +14,5 @@ pipeline {
         sh "./gradlew clean check"
       }
     }
-    stage("Build/Upload") {
-      when { branch 'dev' }
-      steps {
-        sh "./gradlew dockerPush -Dgit.commit='${GIT_COMMIT.substring(0,7)}'"
-      }
-    }
   }
 }
