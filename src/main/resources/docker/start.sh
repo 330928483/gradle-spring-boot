@@ -1,9 +1,9 @@
 #!/bin/sh
 
 TEAM="hub"
-APPID="gradle"
+APPID="gradle-spring-boot"
 
-PROJECT_NAME="gradle-spring"
+PROJECT_NAME="gradle-spring-boot"
 JAVALOG_DIR="/opt/project/logs"
 DT=`date +"%Y%m%d_%H%M%S"`
 MEM_OPTS="-Xms2g -Xmx2g -Xmn768m"
