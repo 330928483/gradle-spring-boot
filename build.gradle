@@ -55,3 +55,12 @@ dependencies {
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+docker {
+    dependsOn assemble
+    name "gradle/spring/boot:${System.properties['git.commit']}"
+    dockerfile file("config/docker/Dockerfile")
+    files bootJar.archivePath, "config/docker/start.sh"
+    files bootJar.archivePath, "config/docker/start.sh"
+    buildArgs(["JAR_FILE": "gradle-spring-boot-1.0-SNAPSHOT.jar"])
+}
