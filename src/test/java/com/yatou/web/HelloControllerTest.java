@@ -23,7 +23,7 @@ public class HelloControllerTest {
     // given
     given(gitProperties.getCommitId()).willReturn("1234");
     // when
-    String hello = helloController.hello();
+    String hello = helloController.getCommitId();
     // then
     Assert.assertEquals("1234", hello);
   }

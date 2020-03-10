@@ -9,11 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/hello")
 public class HelloController {
+
   @Autowired
   private GitProperties git;
-  @GetMapping
-  public String hello() {
+
+  @GetMapping("/commit-id")
+  public String getCommitId() {
     return git.getCommitId();
   }
+
+  @GetMapping
+  public String hello() {
+    return "Hello Docker World";
+  }
+
 
 }
