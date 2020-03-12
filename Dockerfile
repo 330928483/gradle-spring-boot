@@ -2,7 +2,7 @@ FROM java:openjdk-8-jre-alpine
 
 RUN mkdir -p /opt/project
 COPY build/libs/*.jar /opt/project/app.jar
-COPY config/docker/start.sh /opt/project/start.sh
+COPY start.sh /opt/project/start.sh
 WORKDIR /opt/project
 RUN chmod +x start.sh
 
